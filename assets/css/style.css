@@ -1271,10 +1271,14 @@ footer {
 .testimonials-balanced {
     padding: 7rem 0;
     background: #f8fafc;
+     margin-top: 0;
+    margin-bottom: 4rem;
 }
 
 .section-heading.text-center {
     text-align: center;
+     margin-top: 0;
+    margin-bottom: 4rem;
 }
 
 .testimonials-wrapper {
