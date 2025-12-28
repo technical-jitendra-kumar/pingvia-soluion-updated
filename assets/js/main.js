@@ -205,3 +205,31 @@ function addChatMessage(text, sender) {
    CONSOLE LOG
 ===================================== */
 console.log("%cPingvia Solutions JS Loaded Successfully ✔", "color: #0ea5e9; font-size: 1.2rem; font-weight: bold;");
+
+
+// ============> testimonials/index.html============
+// Testimonials Dot Slider
+const testimonialsTrack = document.querySelector('.testimonials-track');
+const testimonialCards = Array.from(testimonialsTrack.children);
+const dots = Array.from(document.querySelectorAll('.testimonial-dots .dot'));
+
+const updateSlide = (index) => {
+    testimonialsTrack.style.transform = `translateX(-${index * 100}%)`;
+    
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+};
+
+// Dot click
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        updateSlide(index);
+    });
+});
+
+// Auto slide (optional - every 6 seconds)
+let currentTestimonialIndex = 0;
+setInterval(() => {
+    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+    updateSlide(currentTestimonialIndex);
+}, 3000);
